@@ -18,7 +18,6 @@ import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
-import com.wantaghstem.chattagh.MessagingActivity;
 import com.wantaghstem.chattagh.R;
 import com.wantaghstem.chattagh.techday.ChattaghActivity;
 
@@ -41,7 +40,7 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // retain this fragment
-        setRetainInstance(true);
+        //setRetainInstance(true);
     }
 
     @Override
@@ -127,6 +126,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        ParseUser.logOut();
     }
 
     @Override

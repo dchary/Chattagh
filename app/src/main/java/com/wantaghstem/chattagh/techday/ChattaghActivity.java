@@ -2,12 +2,10 @@ package com.wantaghstem.chattagh.techday;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.parse.ParseUser;
-import com.wantaghstem.chattagh.MessageService;
 import com.wantaghstem.chattagh.R;
 import com.wantaghstem.chattagh.techday.fragments.LoginFragment;
 
@@ -42,7 +40,14 @@ public class ChattaghActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        return;
+        int count = getFragmentManager().getBackStackEntryCount();
+        if (count == 0) {
+            super.onBackPressed();
+            //additional code
+        } else {
+            getFragmentManager().popBackStack();
+        }
+
     }
 
 }

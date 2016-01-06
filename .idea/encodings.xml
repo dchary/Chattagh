@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/anim" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/animator" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/circular_textview.xml" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/dialogstyled.xml" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/dialogstyled_round.xml" charset="windows-1252" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

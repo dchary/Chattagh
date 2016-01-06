@@ -23,28 +23,28 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="0dp">
+            android:layout_height="match_parent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#c8ffffff"
-                android:paddingTop="8dp">
+                android:background="#c8ffffff">
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true">
+                    android:layout_centerVertical="true">
 
-                    <RelativeLayout
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent"
+                        android:padding="8dp">
 
                         <TextView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
                             android:text="D"
                             android:fontFamily="sans-serif-thin"
                             android:textColor="#FFF"
@@ -53,63 +53,128 @@
                             android:id="@+id/circle"
                             android:background="@drawable/circular_textview"
                             android:layout_centerInParent="true" />
-                    </RelativeLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="55dp"
-                        android:text="dchary"
-                        android:fontFamily="sans-serif-thin"
-                        android:textColor="#000000"
-                        android:textSize="32sp"
-                        android:gravity="center"
-                        android:id="@+id/username" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="55dp"
+                            android:text="dchary"
+                            android:fontFamily="sans-serif-thin"
+                            android:textColor="#000000"
+                            android:textSize="24sp"
+                            android:gravity="center"
+                            android:id="@+id/username"
+                            android:paddingLeft="8dp" />
+                    </LinearLayout>
 
                 </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="16dp">
+
+                    <ImageButton
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:id="@+id/addMessage"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/plus"
+                        android:background="#00ffffff"
+                        android:scaleType="fitXY" />
+                </FrameLayout>
+
             </RelativeLayout>
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/logout"
-                android:id="@+id/logoutButton"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_gravity="center_horizontal"
-                android:background="#78ffffff"
-                android:textSize="24sp"
-                android:padding="15dp"
-                android:textColor="#ffffff" />
-
-            <RelativeLayout
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="#c8ffffff" >
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true" >
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="#007fcd"
+                    android:id="@+id/newButtonHolder">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:text="New"
+                        android:id="@+id/newButton"
+                        android:background="#00ffffff"
+                        android:textColor="#ffffff"
+                        android:textSize="24dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="#ffffff" >
 
                 </LinearLayout>
-            </RelativeLayout>
 
-            <android.support.v4.widget.SwipeRefreshLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/swipeToRefresh"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="#007fcd"
+                    android:id="@+id/hotButtonHolder">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:text="Hot"
+                        android:id="@+id/hotButton"
+                        android:background="#00ffffff"
+                        android:textColor="#ffffff"
+                        android:textSize="25dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="0dp"
-                android:background="#00ffffff"
-                android:id="@+id/timeline">
-            </ListView>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#64ffffff">
 
-            </android.support.v4.widget.SwipeRefreshLayout>
+                    <TextView
+                        android:id="@+id/emptyview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Posts!"
+                        android:textSize="24dp"
+                        android:layout_centerInParent="true"
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/swipeToRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:background="#64ffffff"
+                    android:id="@+id/timeline">
+                </ListView>
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+            </RelativeLayout>
 
         </LinearLayout>
 

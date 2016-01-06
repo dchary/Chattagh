@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".25">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="dchary"
+                android:id="@+id/senderId"
+                android:padding="8dp"
+                android:textColor="@color/chattagh_blue" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/message"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="8dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.75">
+
+            <ImageButton
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:id="@+id/upvote"
+                android:src="@drawable/up_arrow"
+                android:scaleType="fitCenter"
+                android:background="#00ffffff" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="35"
+                    android:id="@+id/votecount"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <ImageButton
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:id="@+id/downvote"
+                android:src="@drawable/down_arrow"
+                android:scaleType="fitCenter"
+                android:background="#00ffffff" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:id="@+id/frame1">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageView3"
+                android:src="@drawable/clock"
+                android:scaleType="fitXY" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="5m"
+            android:id="@+id/date"
+            android:layout_toRightOf="@+id/frame1"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="0 Comments"
+            android:id="@+id/comments"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:padding="8dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

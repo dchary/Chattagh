@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/chattagh_blue"></LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/newMessage" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="#007fcd"
+            android:id="@+id/linearLayout" >
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:text="Cancel"
+                android:id="@+id/cancel"
+                android:background="#00ffffff"
+                android:textColor="#ffffff"
+                android:textSize="24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="#ffffff" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="#007fcd"
+            android:id="@+id/linearLayout2" >
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:text="Post"
+                android:id="@+id/post"
+                android:background="#00ffffff"
+                android:textColor="#ffffff"
+                android:textSize="25dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
