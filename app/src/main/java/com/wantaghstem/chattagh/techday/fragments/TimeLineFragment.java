@@ -43,31 +43,16 @@ public class TimeLineFragment extends Fragment {
 
     private boolean sortByTimeNotVotes = true;
     private View rootView;
-
-    private Button logoutButton;
     private Button newButton;
     private Button hotButton;
-
     private ImageButton newMessage;
-
     private LinearLayout newButtonHolder;
     private LinearLayout hotButtonHolder;
-
-
     private TextView username;
     private TextView circle;
-
-    private SwipeRefreshLayout swipeContainer;
-
     private ListView timeline;
-
+    private SwipeRefreshLayout swipeContainer;
     private TimelinePostAdapter mAdapter;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // retain this fragment
-        //setRetainInstance(true);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -190,7 +175,7 @@ public class TimeLineFragment extends Fragment {
 
     private void updateMessageList(){
         ParseQuery<TimelinePost> query = ParseQuery.getQuery(TimelinePost.class);
-        query.whereEqualTo("commentReference",null);
+        query.whereEqualTo("commentReference", null);
         if (sortByTimeNotVotes) {
             query.orderByDescending("createdAt");
         }else{
@@ -199,7 +184,7 @@ public class TimeLineFragment extends Fragment {
         query.findInBackground(new FindCallback<TimelinePost>() {
             @Override
             public void done(List<TimelinePost> list, ParseException e) {
-                if(list != null){
+                if (list != null) {
                     mAdapter.clear();
                     mAdapter.addAll(list);
                 }
@@ -237,50 +222,10 @@ public class TimeLineFragment extends Fragment {
 
     }
 
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
-
     @Override
     public void onResume() {
         updateMessageList();
         super.onResume();
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState){
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onPause(){
-        super.onPause();
-    }
-
-    @Override
-    public void onStop(){
-        super.onStop();
-    }
-
-    @Override
-    public void onDestroyView(){
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-    }
-
-    @Override
-    public void onDetach(){
-        super.onDetach();
-    }
 }

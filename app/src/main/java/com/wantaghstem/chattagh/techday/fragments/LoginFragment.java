@@ -1,9 +1,7 @@
 package com.wantaghstem.chattagh.techday.fragments;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,17 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.parse.FindCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 import com.wantaghstem.chattagh.R;
-import com.wantaghstem.chattagh.techday.ChattaghActivity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Daniel on 1/2/2016.
@@ -45,15 +37,27 @@ public class LoginFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //Creates the initial login screen.
-        View rootView = inflater.inflate(R.layout.activity_login, container, false);
+        /*  The inflator is a special object in android that can take an XML layout and "inflate it".
+          this means taking the layout and converting it into a view. A view is a layout item that
+          has been pushed onto the screen. View's are what we ultamitely interact with!
+         */
+        View rootView = inflater.inflate(R.layout.login, container, false);
 
+        // We know that the login buttons and text fields were in our layout are now somewhere on the
+        // screen in rootView. Here we retrieve these items for use in our application.
         loginButton = (Button) rootView.findViewById(R.id.loginButton);
         signUpButton = (Button) rootView.findViewById(R.id.signupButton);
         usernameField = (EditText) rootView.findViewById(R.id.loginUsername);
         passwordField = (EditText) rootView.findViewById(R.id.loginPassword);
 
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
+
+        //Let's define a behavior that occurs when the login button is clicked!
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,19 +69,17 @@ public class LoginFragment extends Fragment {
                         if (user != null) {
                             goToTimelineFragment();
                         } else {
-                            Toast.makeText(getContext(),
-                                    "Wrong username/password combo",
-                                    Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Wrong username/password combo", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
             }
         });
 
+        //Let's define a behavior that occurs when the sign-up button is clicked!
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 username = usernameField.getText().toString();
                 password = passwordField.getText().toString();
 
@@ -98,6 +100,9 @@ public class LoginFragment extends Fragment {
                 });
             }
         });
+
+
+
         return rootView;
     }
 
@@ -118,10 +123,6 @@ public class LoginFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
 
     @Override
     public void onResume() {
@@ -129,34 +130,6 @@ public class LoginFragment extends Fragment {
         ParseUser.logOut();
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState){
-        super.onSaveInstanceState(outState);
-    }
 
-    @Override
-    public void onPause(){
-        super.onPause();
-    }
-
-    @Override
-    public void onStop(){
-        super.onStop();
-    }
-
-    @Override
-    public void onDestroyView(){
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-    }
-
-    @Override
-    public void onDetach(){
-        super.onDetach();
-    }
 
 }

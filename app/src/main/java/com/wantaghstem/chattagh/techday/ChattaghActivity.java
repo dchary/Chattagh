@@ -2,7 +2,6 @@ package com.wantaghstem.chattagh.techday;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
@@ -17,11 +16,7 @@ public class ChattaghActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chattagh_activity);
-
-
-
-
+        setContentView(R.layout.activity);
 
         Fragment loginFragment = new LoginFragment();
 
@@ -30,12 +25,6 @@ public class ChattaghActivity extends Activity {
         fragmentTransaction.add(R.id.container, loginFragment, null);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
-    }
-
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
     @Override

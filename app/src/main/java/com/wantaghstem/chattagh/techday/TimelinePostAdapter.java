@@ -27,9 +27,10 @@ import java.util.List;
  * Created by Daniel on 1/2/2016.
  */
 public class TimelinePostAdapter extends ArrayAdapter<TimelinePost> {
-    Context context;
-    int layoutResourceId;
-    List<TimelinePost> data = null;
+
+    private Context context;
+    private int layoutResourceId;
+    private List<TimelinePost> data = null;
 
     public TimelinePostAdapter(Context context, int layoutResourceId, List<TimelinePost> data) {
         super(context, layoutResourceId, data);
@@ -45,7 +46,7 @@ public class TimelinePostAdapter extends ArrayAdapter<TimelinePost> {
 
 
         TextView senderId = (TextView)(row.findViewById(R.id.senderId));
-        TextView date = (TextView)(row.findViewById(R.id.date));
+        TextView timeSincePost = (TextView)(row.findViewById(R.id.date));
         TextView message = (TextView)(row.findViewById(R.id.message));
         ImageButton upVote = (ImageButton)(row.findViewById(R.id.upvote));
         ImageButton downVote = (ImageButton)(row.findViewById(R.id.downvote));
@@ -70,17 +71,14 @@ public class TimelinePostAdapter extends ArrayAdapter<TimelinePost> {
                 fragmentTransaction.replace(R.id.container, commentsFragment,null);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-
-                //Toast.makeText(getContext(),"Go to Make Comments",Toast.LENGTH_SHORT).show();
             }
         });
 
+        //UpVote Click Code should go here
         upVote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                data.get(position).
-                        setVoteCount(
-                                data.get(position).getVoteCount() + 1);
+                data.get(position).setVoteCount(data.get(position).getVoteCount() + 1);
                 data.get(position).saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
@@ -90,12 +88,11 @@ public class TimelinePostAdapter extends ArrayAdapter<TimelinePost> {
             }
         });
 
+        //DownVote Click Code should go here
         downVote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                data.get(position).
-                        setVoteCount(
-                                data.get(position).getVoteCount()-1);
+                data.get(position).setVoteCount(data.get(position).getVoteCount() - 1);
                 data.get(position).saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
@@ -103,6 +100,10 @@ public class TimelinePostAdapter extends ArrayAdapter<TimelinePost> {
                     }
                 });            }
         });
+
+        //UpVote Click code should go here
+        votecount.setText(Integer.toString(data.get(position).getVoteCount()));
+
 
         Date oldDate = data.get(position).getCreatedAt();
         Date currentDate = new Date();
@@ -115,13 +116,11 @@ public class TimelinePostAdapter extends ArrayAdapter<TimelinePost> {
             suffix = "h";
         }
         String finalDate = result + suffix;
-        date.setText(finalDate);
+        timeSincePost.setText(finalDate);
+
 
         senderId.setText(data.get(position).getSender());
         message.setText(data.get(position).getMessageText());
-        votecount.setText(Integer.toString(data.get(position).getVoteCount()));
-
-
 
         return row;
     }

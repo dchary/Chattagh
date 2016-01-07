@@ -33,13 +33,14 @@ import java.util.List;
  */
 public class CommentsFragment extends Fragment {
 
-    ListView commentsTimeline;
-    TimelinePostCommentAdapter mAdapter;
+    private ListView commentsTimeline;
+    private TimelinePostCommentAdapter mAdapter;
     private SwipeRefreshLayout swipeContainer;
     private ImageButton newMessage;
     private TimelinePost timelinePost;
+    private String objectId;
 
-    String objectId;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.commentslayout, container, false);

@@ -6,6 +6,7 @@ import com.parse.ParseObject;
 import com.wantaghstem.chattagh.techday.TimelinePost;
 
 public class ChattaghApplication extends Application {
+
     @Override
     public void onCreate() {
         super.onCreate();

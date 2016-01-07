@@ -36,42 +36,8 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.75">
-
-            <ImageButton
-                android:layout_width="fill_parent"
-                android:layout_height="48dp"
-                android:id="@+id/upvote"
-                android:src="@drawable/up_arrow"
-                android:scaleType="fitCenter"
-                android:background="#00ffffff" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="35"
-                    android:id="@+id/votecount"
-                    android:layout_centerInParent="true" />
-            </RelativeLayout>
-
-            <ImageButton
-                android:layout_width="fill_parent"
-                android:layout_height="48dp"
-                android:id="@+id/downvote"
-                android:src="@drawable/down_arrow"
-                android:scaleType="fitCenter"
-                android:background="#00ffffff" />
-
-        </LinearLayout>
+        <!-- WRITE YOUR CODE BELOW HERE -->
+        <include layout="@layout/ratingsystem"/>
 
     </LinearLayout>
 

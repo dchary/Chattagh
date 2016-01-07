@@ -23,9 +23,10 @@ import java.util.List;
  * Created by Daniel on 1/2/2016.
  */
 public class TimelinePostCommentAdapter extends ArrayAdapter<TimelinePost> {
-    Context context;
-    int layoutResourceId;
-    List<TimelinePost> data = null;
+
+    private Context context;
+    private int layoutResourceId;
+    private List<TimelinePost> data = null;
 
     public TimelinePostCommentAdapter(Context context, int layoutResourceId, List<TimelinePost> data) {
         super(context, layoutResourceId, data);

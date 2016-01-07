@@ -72,8 +72,6 @@ public class TimelinePost extends ParseObject {
         add("voters", voter);
     }
 
-
-
     @Override
     public Date getUpdatedAt() {
         return super.getUpdatedAt();
