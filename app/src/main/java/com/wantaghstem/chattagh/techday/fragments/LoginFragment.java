@@ -45,61 +45,12 @@ public class LoginFragment extends Fragment {
 
         // We know that the login buttons and text fields were in our layout are now somewhere on the
         // screen in rootView. Here we retrieve these items for use in our application.
-        loginButton = (Button) rootView.findViewById(R.id.loginButton);
-        signUpButton = (Button) rootView.findViewById(R.id.signupButton);
-        usernameField = (EditText) rootView.findViewById(R.id.loginUsername);
-        passwordField = (EditText) rootView.findViewById(R.id.loginPassword);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         //Let's define a behavior that occurs when the login button is clicked!
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                username = usernameField.getText().toString();
-                password = passwordField.getText().toString();
-
-                ParseUser.logInInBackground(username, password, new LogInCallback() {
-                    public void done(ParseUser user, ParseException e) {
-                        if (user != null) {
-                            goToTimelineFragment();
-                        } else {
-                            Toast.makeText(getContext(), "Wrong username/password combo", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-            }
-        });
 
         //Let's define a behavior that occurs when the sign-up button is clicked!
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                username = usernameField.getText().toString();
-                password = passwordField.getText().toString();
 
-                ParseUser user = new ParseUser();
-                user.setUsername(username);
-                user.setPassword(password);
-
-                user.signUpInBackground(new SignUpCallback() {
-                    public void done(ParseException e) {
-                        if (e == null) {
-                            goToTimelineFragment();
-                        } else {
-                            Toast.makeText(getContext(),
-                                    "There was an error signing up."
-                                    , Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-            }
-        });
 
 
 

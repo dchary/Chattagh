@@ -59,7 +59,6 @@ public class TimelinePostAdapter extends ArrayAdapter<TimelinePost> {
         comments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 CommentsFragment commentsFragment = new CommentsFragment();
                 Bundle args = new Bundle();
                 args.putString("objectId", data.get(position).getObjectId());
@@ -75,34 +74,12 @@ public class TimelinePostAdapter extends ArrayAdapter<TimelinePost> {
         });
 
         //UpVote Click Code should go here
-        upVote.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                data.get(position).setVoteCount(data.get(position).getVoteCount() + 1);
-                data.get(position).saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        notifyDataSetChanged();
-                    }
-                });
-            }
-        });
+
 
         //DownVote Click Code should go here
-        downVote.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                data.get(position).setVoteCount(data.get(position).getVoteCount() - 1);
-                data.get(position).saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        notifyDataSetChanged();
-                    }
-                });            }
-        });
+
 
         //UpVote Click code should go here
-        votecount.setText(Integer.toString(data.get(position).getVoteCount()));
 
 
         Date oldDate = data.get(position).getCreatedAt();
