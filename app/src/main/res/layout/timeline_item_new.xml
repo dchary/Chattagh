@@ -37,7 +37,6 @@
         </LinearLayout>
 
         <!-- WRITE YOUR CODE BELOW HERE -->
-        <include layout="@layout/ratingsystem"/>
 
     </LinearLayout>
 
