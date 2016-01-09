@@ -92,9 +92,9 @@ public class TimeLineFragment extends Fragment {
                 postMessageDialog.getWindow().setWindowAnimations(R.style.DialogAnimation);
                 postMessageDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-                final EditText newMessage = (EditText)postMessageDialog.findViewById(R.id.newMessage);
-                Button cancel = (Button)postMessageDialog.findViewById(R.id.cancel);
-                Button post = (Button)postMessageDialog.findViewById(R.id.post);
+                final EditText newMessage = (EditText) postMessageDialog.findViewById(R.id.newMessage);
+                Button cancel = (Button) postMessageDialog.findViewById(R.id.cancel);
+                Button post = (Button) postMessageDialog.findViewById(R.id.post);
 
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -169,7 +169,28 @@ public class TimeLineFragment extends Fragment {
             }
         });
 
+        //ADD YOUR CODE HERE
+        ImageButton viewUsers = (ImageButton)rootView.findViewById(R.id.viewUsers);
+        viewUsers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToUsersFragment();
+            }
+        });
+
         return rootView;
+    }
+
+    private void goToUsersFragment(){
+
+        UsersFragment usersFragment = new UsersFragment();
+
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.animator.fade_in,R.animator.fade_out
+                ,R.animator.fade_in,R.animator.fade_out);
+        fragmentTransaction.replace(R.id.container, usersFragment, null);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
 

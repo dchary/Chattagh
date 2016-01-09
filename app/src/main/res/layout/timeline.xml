@@ -73,7 +73,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:id="@+id/boxHolder">
 
                     <ImageButton
                         android:layout_width="32dp"
@@ -85,6 +86,17 @@
                         android:background="#00ffffff"
                         android:scaleType="fitXY" />
                 </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/boxHolder">
+
+                    <!-- ADD YOUR CODE HERE -->
+                    <include layout="@layout/usersbutton"></include>
+
+                </LinearLayout>
+
 
             </RelativeLayout>
 
