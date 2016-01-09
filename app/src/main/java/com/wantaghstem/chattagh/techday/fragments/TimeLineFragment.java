@@ -170,13 +170,7 @@ public class TimeLineFragment extends Fragment {
         });
 
         //ADD YOUR CODE HERE
-        ImageButton viewUsers = (ImageButton)rootView.findViewById(R.id.viewUsers);
-        viewUsers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToUsersFragment();
-            }
-        });
+
 
         return rootView;
     }

@@ -26,26 +26,9 @@ public class UsersFragment extends Fragment {
     UserListAdapter adapter;
     @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup container, Bundle savedInstance){
-
         //They will implement everything written here!
         View rootView = layoutInflater.inflate(R.layout.userlist, container, false);
 
-        ListView userListView = (ListView)rootView.findViewById(R.id.usersListView);
-
-        //Now we need to make our adapter,
-        ArrayList<ParseUser> userList = new ArrayList<ParseUser>();
-        adapter = new UserListAdapter(getActivity(),R.layout.user_list_item,userList);
-        userListView.setAdapter(adapter);
-
-        //We will query the internet, and Parse for user information
-        ParseQuery<ParseUser> query = ParseUser.getQuery();
-        query.findInBackground(new FindCallback<ParseUser>() {
-            @Override
-            public void done(List<ParseUser> list, ParseException e) {
-                adapter.clear();
-                adapter.addAll(list);
-            }
-        });
 
         return rootView;
 

@@ -93,7 +93,6 @@
                     android:layout_toLeftOf="@+id/boxHolder">
 
                     <!-- ADD YOUR CODE HERE -->
-                    <include layout="@layout/usersbutton"></include>
 
                 </LinearLayout>
 
